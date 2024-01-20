@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出版信息</title>
+  <style>
+    body {
+      background-color: aqua; /* 背景颜色不变 */
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .floating-text {
+      font-size: 24px;
+      color: white;
+      opacity: 0;
+      animation: floatUp 2s ease-in-out forwards;
+      margin-bottom: 20px;
+    }
+
+    .publisher-info {
+      font-size: 18px;
+      color: white;
+      opacity: 0;
+      animation: floatUp 2s ease-in-out forwards;
+      margin-bottom: 20px;
+    }
+
+    #ioButton {
+      cursor: pointer;
+      font-size: 16px;
+      color: white;
+      border: none;
+      background-color: transparent;
+      margin-top: 20px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .no-underline {
+    text-decoration: none; /* 移除下划线 */
+    color: white; /* 设置链接颜色 */
+  }
+  </style>
+</head>
+<body>
+  <div class="floating-text">出版方</div>
+  <div class="publisher-info">星空工作室</div>
+  <div class="floating-text">主编</div>
+  <div class="publisher-info">丈令其</div>
+  <div class="floating-text">副编</div>
+  <div class="publisher-info">汪子涵</div>
+  <div class="floating-text">网站编写</div>
+  <div class="publisher-info">培根</div>
+
+  <a href="http://localhost:8000/introduce/sip" class="no-underline">→</a>
+  </script>
+</body>
+</html>
