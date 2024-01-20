@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome Page</title>
+  <title>欢迎来到《轮回》</title>
   <style>
     body {
       background-color: aqua;
@@ -15,7 +15,7 @@
       height: 100vh;
     }
 
-    .welcome-text {
+    .floating-text {
       font-size: 30px;
       color: white;
       opacity: 0;
@@ -39,13 +39,6 @@
       animation: floatUp 3s ease-in-out forwards;
     }
 
-    .continue-text {
-      font-size: 14px;
-      color: white;
-      opacity: 0;
-      animation: floatUp 2s ease-in-out forwards;
-    }
-
     @keyframes floatUp {
       0% {
         opacity: 0;
@@ -56,50 +49,24 @@
         transform: translateY(0);
       }
     }
+    
+    .no-underline {
+    text-decoration: none; /* 移除下划线 */
+    color: white; /* 设置链接颜色 */
+    opacity: 0;
+    animation: floatUp 3s ease-in-out forwards;
+    font-size: 10px;
+    
+  }
   </style>
 </head>
 <body>
-  <div class="welcome-text">欢迎来到</div>
+  <div class="floating-text">欢迎来到</div>
   <div class="game-title">《轮回》</div>
   <div class="separator"></div>
-  <div class="continue-text">点击屏幕继续</div>
+  <a href="http://localhost:8000/introduce/bin" class="no-underline">点击继续</a>
   
-<script>
-  document.body.addEventListener('click', function() {
-    clearAndShowText();
-  });
 
-  function clearAndShowText() {
-    // 清空屏幕上的所有文字
-    document.body.innerHTML = '';
-
-    // 显示文本，并设置延迟
-    showText("出版方   星空工作室", 10, 100, 'blue', 30);
-    showText("主编          丈令其", 100, 150, 'green', 30);
-    showText("副编          汪子涵", 200, 200, 'red', 30);
-    showText("网站编写 培根", 300, 250, 'purple', 30);
-  }
-
-  function showText(text, delay, translateY, color, fontSize) {
-    setTimeout(function() {
-      var textElement = document.createElement('div');
-      textElement.style.fontSize = fontSize + 'px';
-      textElement.style.color = color;
-      textElement.textContent = text;
-      textElement.style.opacity = 0;
-      textElement.style.position = 'relative';
-      textElement.style.transform = 'translateY(' + translateY + 'px)';
-      textElement.style.animation = 'floatUp 3s ease-in-out forwards';
-      textElement.style.marginBottom = '25px';
-      document.body.appendChild(textElement);
-    }, delay);
-  }
-</script>
-
+  </script>
 </body>
 </html>
-
-
-
-
-
