@@ -39,6 +39,12 @@
       animation: floatUp 3s ease-in-out forwards;
     }
 
+    #popupContainer {
+      top: 50%;
+      left: 25%;
+      transform: translate(-12%, -50%);
+    }
+
     @keyframes floatUp {
       0% {
         opacity: 0;
@@ -66,7 +72,27 @@
   <div class="separator"></div>
   <a href="http://snxdm.github.io/Cat/introduce/bin" class="no-underline">点击继续</a>
   
+    <!-- 用于显示弹窗的容器 -->
+  <div id="popupContainer"></div>
 
+  <script>
+    // 使用 fetch 加载外部页面
+    fetch('https://snxdm.github.io/Cat/introduce/other/pun/update.html')
+      .then(response => response.text())
+      .then(html => {
+        // 将外部页面的内容插入到当前页面的容器中
+        document.getElementById('popupContainer').innerHTML = html;
+
+        // 在加载完成后绑定关闭按钮的事件处理程序
+        document.getElementById('closeBtn').addEventListener('click', function() {
+          // 关闭弹窗
+          document.getElementById('popup').style.animation = 'bounceOut 0.5s ease-in-out';
+          setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+          }, 500);
+        });
+      })
+      .catch(error => console.error('Error fetching external page:', error));
   </script>
 </body>
 </html>
