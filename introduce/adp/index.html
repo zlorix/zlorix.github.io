@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>欢迎来到《轮回》</title>
+  <style>
+    body {
+      background-color: aqua;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .floating-text {
+      font-size: 24px;
+      color: white;
+      opacity: 0;
+      animation: floatUp 2s ease-in-out forwards;
+      margin-bottom: 20px;
+    }
+
+    .game-title {
+      font-size: 34px;
+      color: black;
+      opacity: 0;
+      animation: floatUp 3s ease-in-out forwards;
+      margin-bottom: 20px;
+    }
+
+
+
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .no-underline {
+    text-decoration: none; /* 移除下划线 */
+    color: white; /* 设置链接颜色 */
+    opacity: 0;
+    animation: floatUp 3s ease-in-out forwards;
+    font-size: 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="game-title">编写人员</div>
+<div class="floating-text">
+<span style="color :red">
+<li>甲同志</li>
+<li>乙同志</li>
+<li>丁同志</li>
+<li>丈令其</li>
+</span>
+
+<div class="game-title">合作伙伴</div>
+<span style=" color :blue">
+<li>正Q集团</li>
+</span>
+</div> 
+<a href="http://snxdm.github.io/Cat/introduce/cvs" class="no-underline">点击继续</a>
+
+
+  </script>
+</body>
+</html>
